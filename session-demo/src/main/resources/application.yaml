@@ -1,0 +1,28 @@
+
+
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  security:
+    user:
+      name: admin
+      password: admin
+  session:
+    store-type: jdbc
+    jdbc:
+      initialize-schema: always
+      schema: classpath:org/springframework/session/jdbc/schema-mysql.sql
+      table-name: SPRING_SESSION
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/demo?serverTimezone=GMT&useUnicode=true&characterEncoding=utf-8&useSSL=true&autoReconnect=true&enabledTLSProtocols=TLSv1.2
+    username: root
+    password:
+    initialSize: 5
+    minIdle: 5
+    maxActive: 10
+server:
+  servlet:
+    session:
+      cookie:
+        name: B_SESSION
